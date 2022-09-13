@@ -57,7 +57,7 @@ public class SolverStraightImpl implements Solver {
 		Optional<Alternatives> firstTry = alternatives.stream()
 				.sorted((a1, a2) -> Integer.compare(a1.set.size(), a2.set.size()))
 				.findFirst();
-		if (firstTry.isEmpty()) {
+		if (!firstTry.isPresent()) {
 			return result;
 		}
 		Alternatives a = firstTry.get();
